@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- =====Fav Icon===== -->
+        <link rel = "icon" type = "image/png" href = "assets/img/rover1.jpg">
+
+        <!-- =====linking external css===== -->
+        <link rel="stylesheet" href="{{ url_for('static',filename="css/styles.css")}}">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- Bootstrap Js -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+        <title>X-ray Predictor</title>
+    </head>
+
+
+
+    <body>
+
+
+
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">X-ray Predictor</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#features" class="nav__link active">Features</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">X-ray Predictor</a></li>
+                        <li class="nav__item"><a href="#project" class="nav__link">Covid Live Updates</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact Us</a></li>
+                        <li class="nav__item"><a href="#hobby" class="nav__link">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+
+
+
+        <main class="l-main">
+
+
+            <!--===== HOME ====   banner.png   =-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">X-ray <br> Predictor, <br> Covid Live<br> Updates</h1>
+
+                  <a href="#contact" class="button">Contact</a>
+                </div>
+
+
+                <div class="home__img">
+                    <img src="{{ url_for('static',filename="img/web.png")}}" alt="">
+                </div>
+            </section>
+
+
+
+
+            <!--===== ABOUT =====-->
+            <section class="features section " id="features">
+                <h2 class="section-title">Features</h2>
+                <br><br>
+
+                  <!--===== Education =====-->
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="{{ url_for('static',filename="img/tele.jpg")}}" alt="">
+                        <br><br>
+                    </div>
+
+                    <div>
+                        <h1 class="about__subtitle">Live Updates</h1><br>
+                        <p class="about__text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get Live Updates related to Total Corona cases <br> &nbsp;&nbsp;&nbsp;</p>
+
+                    </div>
+                </div>
+
+
+                <br><br><br>
+
+                  <!--===== Web development =====-->
+                <div class="about__container bd-grid">
+
+                    <div>
+                        <h1 class="about__subtitle">Accurate Results</h1><br>
+                        <p class="about__text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Predict results with high accuracy</p>
+
+                    </div>
+
+                    <div class="about__img">
+                        <img src="{{ url_for('static',filename="img/cha.png")}}" alt="">
+                        <br><br>
+                    </div>
+                </div>
+
+
+                <br><br><br>
+
+
+                  <!--===== Automatons =====-->
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="{{ url_for('static',filename="img/rover1.jpg")}}" alt="">
+                        <br><br>
+                    </div>
+
+                    <div>
+                        <h1 class="about__subtitle">Visualisation</h1><br>
+                        <p class="about__text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Visualisation of live updates</p>
+
+                    </div>
+                </div>
+
+
+                <br>
+
+            </section>
+
+            <br><br>
+
+
+
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">X-ray Predictor</h2>
+                  <br><br>
+
+                  <div class="skills__container bd-grid" style="text-align: center;">
+                    <div>
+                        <h2>Predict X-ray Scans and determine the defect.</h2>
+
+                        <div style="text-align: center;">
+                            <!-- Section 5 -->
+                        <section div class="" id="section-5" >
+                            <div class="container">
+                                <div class="row">
+                                    <div class="">
+                                        <form class="md-form" action="/predict" method="POST" enctype="multipart/form-data">
+                                            <div class="file-field medium">
+                                            <div >
+                                                <br><br>
+                                                <h2><span>Choose file to predict Condition<i class="fas fa-cloud-upload-alt ml-3" aria-hidden="true"></i></span></h2>>
+                                                <input class="button" name="file" type="file">
+                                            </div>
+                                            <br><br><br>
+                                            <button class="button">
+                                                PREDICT
+                                            </button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                    <div class="about__img">
+                        <img src="{{ url_for('static',filename="img/web.png")}}" alt="">
+                        <br><br>
+                    </div>
+                    <div class="container">
+                        <h2>Result</h2>
+                        <div id="pred"><h2>{{pred1}}</h2></div>
+                    </div>
+
+            </div>
+
+
+
+
+            <!--===== Projects =====-->
+            <section class="project section" id="project">
+              <h2 class="section-title">Covid Live Updates</h2>
+              <br><br>
+
+              <div class="project__container bd-grid">
+                <div class="contact__img">
+                    <img src="{{ url_for('static',filename="img/about.png")}}" alt="">
+                </div>
+
+
+                <div  style="text-align: center;">
+
+                    <h2>Get Live updates and visualize using different maps.</h2>
+                    <br><br>
+                    <a href="{{ url_for('covid') }}" class="button">Visualize</a>
+
+            </div>
+              </div>
+
+            </section>
+
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact Us</h2>
+                <br><br>
+                <div class="contact__container bd-grid">
+                  <div class="contact__img">
+                      <img src="{{ url_for('static',filename="img/about.png")}}" alt="">
+                  </div>
+
+                  <div >
+                    <form action="" class="contact__form">
+                        <input type="text" placeholder="Name" class="contact__input">
+                        <input type="mail" placeholder="Email" class="contact__input">
+                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                        <input type="button" value="Submit" class="contact__button button">
+                    </form>
+                  </div>
+                </div>
+
+
+                <!--===== Hobbies =====-->
+            <section class="hobby section" id="hobby">
+                <h2 class="section-title">About Us</h2>
+                <div class="project__container bd-grid">
+
+                    <div class="card" >
+                        <br><br><br>
+                          <img src="{{ url_for('static',filename="img/download.jfif")}}" alt="Avatar" style="width:100%">
+                          <div class="container"><br>
+                            <h3 class="about__subtitle">Rohit Naikade</h3>
+                            <p>Web Developer</p>
+                          </div>
+                          <br>
+                          <input onclick="window.location.href='https://github.com/MEHUL';" type="button" value="Contact" class="project__button button" ><br><br>
+                    </div>
+
+                    <div class="card"><br>
+                          <img src="{{ url_for('static',filename="img/banner.png")}}" alt="Avatar" style="width:100%">
+                          <div class="container">
+                            <h3 class="about__subtitle">Mehul Lokhande</h3>
+                            <p>Web Developer</p>
+                          </div>
+                          <br>
+                          <input onclick="window.location.href='https://github.com/MEHUL';" type="button" value="Contact" class="project__button button" ><br><br>
+                    </div>
+
+                    <div class="card">
+                          <img src="{{ url_for('static',filename="img/about.png")}}" alt="Avatar" style="width:100%">
+                          <div class="container">
+                            <h3 class="about__subtitle">Vijayraj Dabhade</h3>
+                            <p>Web Developer</p>
+                          </div>
+                          <br>
+                          <input onclick="window.location.href='https://github.com/MEHUL';" type="button" value="Contact" class="project__button button" ><br><br>
+                    </div>
+
+                    <div class="card">
+                          <img src="{{ url_for('static',filename="img/engi.jfif")}}" alt="Avatar" style="width:100%">
+                          <div class="container">
+                            <h3 class="about__subtitle">Govind Madankar</h3>
+                            <p>Web Developer</p>
+                          </div>
+                          <br>
+                          <input onclick="window.location.href='https://github.com/MEHUL';" type="button" value="Contact" class="project__button button" ><br><br>
+                    </div>
+                </div>
+              </section>
+
+
+
+            </section>
+            <br><br><br><br><br>
+        </main>
+
+
+
+
+
+
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+
+
+              <div class="about__container bd-grid">
+
+
+                          <div>
+                                <p class="footer__title">Team Baltic Knights</p>
+                                <p class="about__subtitle">Pune | India</p><br>
+                                <div class="footer__social">
+                                    <a href="mailto:mehullokhande18@gmail.com" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                                    <a href="https://github.com/MEHUL" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                                    <a href="https://www.linkedin.com/in/mehul-lokhande-94167a190/" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+                                    <a href="https://www.codechef.com/users/mehul25" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+                                </div>
+
+                          </div>
+                        </div>
+              </div>
+
+
+
+
+        </footer>
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--===== Scroll to top =====-->
+        <script type="text/javascript">
+        var scrolltotop={setting:{startline:100,scrollto:0,scrollduration:1e3,fadeduration:[500,100]},controlHTML:'<img src="https://i1155.photobucket.com/albums/p559/scrolltotop/arrow3.png" />',controlattrs:{offsetx:5,offsety:5},anchorkeyword:"#top",state:{isvisible:!1,shouldvisible:!1},scrollup:function(){this.cssfixedsupport||this.$control.css({opacity:0});var t=isNaN(this.setting.scrollto)?this.setting.scrollto:parseInt(this.setting.scrollto);t="string"==typeof t&&1==jQuery("#"+t).length?jQuery("#"+t).offset().top:0,this.$body.animate({scrollTop:t},this.setting.scrollduration)},keepfixed:function(){var t=jQuery(window),o=t.scrollLeft()+t.width()-this.$control.width()-this.controlattrs.offsetx,s=t.scrollTop()+t.height()-this.$control.height()-this.controlattrs.offsety;this.$control.css({left:o+"px",top:s+"px"})},togglecontrol:function(){var t=jQuery(window).scrollTop();this.cssfixedsupport||this.keepfixed(),this.state.shouldvisible=t>=this.setting.startline?!0:!1,this.state.shouldvisible&&!this.state.isvisible?(this.$control.stop().animate({opacity:1},this.setting.fadeduration[0]),this.state.isvisible=!0):0==this.state.shouldvisible&&this.state.isvisible&&(this.$control.stop().animate({opacity:0},this.setting.fadeduration[1]),this.state.isvisible=!1)},init:function(){jQuery(document).ready(function(t){var o=scrolltotop,s=document.all;o.cssfixedsupport=!s||s&&"CSS1Compat"==document.compatMode&&window.XMLHttpRequest,o.$body=t(window.opera?"CSS1Compat"==document.compatMode?"html":"body":"html,body"),o.$control=t('<div id="topcontrol">'+o.controlHTML+"</div>").css({position:o.cssfixedsupport?"fixed":"absolute",bottom:o.controlattrs.offsety,right:o.controlattrs.offsetx,opacity:0,cursor:"pointer"}).attr({title:"Scroll to Top"}).click(function(){return o.scrollup(),!1}).appendTo("body"),document.all&&!window.XMLHttpRequest&&""!=o.$control.text()&&o.$control.css({width:o.$control.width()}),o.togglecontrol(),t('a[href="'+o.anchorkeyword+'"]').click(function(){return o.scrollup(),!1}),t(window).bind("scroll resize",function(t){o.togglecontrol()})})}};scrolltotop.init();
+        </script>
+
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="{{ url_for('static',filename="js/main.js")}}"></script>
+    </body>
+
+
+
+
+
+</html>
